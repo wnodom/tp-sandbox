@@ -2,6 +2,8 @@
 
 <tp-video-list />
 
-<tp-video-player />
+<tp-video-player [video]="currentVideo()" />
+
+<button (click)="updateVideo()">Update Video</button>
 
 <router-outlet />

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core';
 
 @Component({
   selector: 'tp-video-player',
@@ -7,4 +7,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './video-player.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class VideoPlayer {}
+export class VideoPlayer {
+  video = input();
+}
