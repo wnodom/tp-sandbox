@@ -3,15 +3,13 @@
 <h2>Video List</h2>
 
 <!--
-
 https://jeanmeche.github.io/angular-for-tracking/?tracking=id&dom=stateless&change=shuffle
-
 -->
-@for (v of $any(videos); track uniqueTracker(v)) {
-<div>
+@for (v of videos; track uniqueTracker(v)) {
+<button (click)="updateCurrentVideo(v)">
   <img [src]="`http://img.youtube.com/vi/${v.id}/0.jpg`" />
   {{ v.title }}
-</div>
+</button>
 }
 
 <!--

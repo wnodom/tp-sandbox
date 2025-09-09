@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, output } from '@angular/core';
 import { VideoDataHandler } from '../video-data-handler';
 import { AsyncPipe } from '@angular/common';
+import { Video } from '../video-types';
 
 @Component({
   selector: 'tp-video-list',
@@ -10,11 +11,17 @@ import { AsyncPipe } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class VideoList {
+  readonly currentVideo = output<Video>();
+
   private readonly vdh = inject(VideoDataHandler);
 
   protected videos$ = this.vdh.loadVideos();
 
-  uniqueTracker(v: any) {
+  uniqueTracker(v: Video) {
     return v.id + ';' + v.author + ';' + v.title;
+  }
+
+  updateCurrentVideo(v: Video) {
+    this.currentVideo.emit(v);
   }
 }

@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core';
+import { Video } from '../video-types';
 
 @Component({
   selector: 'tp-video-player',
@@ -8,5 +9,5 @@ import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class VideoPlayer {
-  video = input();
+  video = input<Video>();
 }
