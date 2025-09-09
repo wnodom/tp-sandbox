@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-video-list',
+  selector: 'tp-video-list',
   imports: [],
   templateUrl: './video-list.html',
-  styleUrl: './video-list.scss'
+  styleUrl: './video-list.scss',
 })
-export class VideoList {
-
-}
+export class VideoList {}
