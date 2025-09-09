@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { VideoDataHandler } from '../video-data-handler';
-import { AsyncPipe, JsonPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'tp-video-list',
-  imports: [AsyncPipe, JsonPipe],
+  imports: [AsyncPipe],
   templateUrl: './video-list.html',
   styleUrl: './video-list.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

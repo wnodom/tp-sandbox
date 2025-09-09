@@ -18,10 +18,6 @@ export class App {
     id: 'pPz5lohthaw',
   });
 
-  constructor() {
-    setTimeout(() => this.updateVideo(), 5000);
-  }
-
   updateVideo() {
     this.currentVideo.set({
       title: 'Neutron Star Collision Detected - Where Did It Happen?',
