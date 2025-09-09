@@ -1,3 +1,14 @@
+@let videos = videos$ | async;
+
 <h2>Video List</h2>
 
-<pre>{{ videos$ | async | json }}</pre>
+<!--
+
+https://jeanmeche.github.io/angular-for-tracking/?tracking=id&dom=stateless&change=shuffle
+
+-->
+@for (v of $any(videos); track uniqueTracker(v)) {
+<p>{{ v.title }}</p>
+}
+
+<pre>{{ videos | json }}</pre>

@@ -10,7 +10,11 @@ import { AsyncPipe, JsonPipe } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class VideoList {
-  private vdh = inject(VideoDataHandler);
+  private readonly vdh = inject(VideoDataHandler);
 
   protected videos$ = this.vdh.loadVideos();
+
+  uniqueTracker(v: any) {
+    return v.id + ';' + v.author + ';' + v.title;
+  }
 }
