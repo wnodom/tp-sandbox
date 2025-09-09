@@ -1,4 +1,6 @@
-
-tp-video-list {
-  border: 3px solid red;
+:host {
+  display: grid;
+  gap: 1rem;
+  
+  grid-template-columns: 1fr 2fr;
 }
