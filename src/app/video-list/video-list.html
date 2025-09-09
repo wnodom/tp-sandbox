@@ -8,7 +8,12 @@ https://jeanmeche.github.io/angular-for-tracking/?tracking=id&dom=stateless&chan
 
 -->
 @for (v of $any(videos); track uniqueTracker(v)) {
-<p>{{ v.title }}</p>
+<div>
+  <img [src]="`http://img.youtube.com/vi/${v.id}/0.jpg`" />
+  {{ v.title }}
+</div>
 }
 
+<!--
 <pre>{{ videos | json }}</pre>
+-->
