@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'tp-video-list',
+  selector: 'tp-stat-filters',
   imports: [],
-  templateUrl: './video-list.html',
-  styleUrl: './video-list.scss',
+  templateUrl: './stat-filters.html',
+  styleUrl: './stat-filters.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class VideoList {}
+export class StatFilters {}
