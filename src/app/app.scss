@@ -1,16 +1,17 @@
 :host {
   display: grid;
   gap: 1rem;
-  
+
+  // prettier-ignore
   grid:
-    " header header "
-    " actions . "
-    " list player " /
-    1fr 2fr;
+    " header   header "
+    " actions  .      "
+    " list     player "
+    / 1fr       2fr;
 }
 
-button { grid-area: actions; }
-
 header { grid-area: header; }
+
 tp-video-list { grid-area: list; }
+
 tp-video-player { grid-area: player; }
