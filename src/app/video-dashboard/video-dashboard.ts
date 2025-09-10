@@ -12,7 +12,7 @@ import { VideoDataHandler } from '../video-data-handler';
   styleUrl: './video-dashboard.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class VideoDashboard {
+export default class VideoDashboard {
   protected readonly vdh = inject(VideoDataHandler);
 
   protected readonly videos = this.vdh.currentVideoSubset;
