@@ -1,0 +1,5 @@
+<header><h3>video-dashboard works!</h3></header>
+
+<tp-video-list [videos]="videos()" (selectVideo)="updateCurrentVideo($event)" />
+
+<tp-video-player [video]="myVideo()" />

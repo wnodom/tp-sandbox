@@ -12,9 +12,13 @@ export class VideoDataHandler {
 
   private _currentVideoSubject = new BehaviorSubject<Video | undefined>(undefined);
 
+  //  private _currentVideoSubset = new BehaviorSubject<Video[]>([]);
+
   readonly currentVideo$ = this._currentVideoSubject.asObservable();
 
   readonly currentVideo = toSignal(this.currentVideo$);
+
+  readonly currentVideoSubset = toSignal(this.loadVideos());
 
   updateCurrentVideo(v: Video) {
     this._currentVideoSubject.next(v);
