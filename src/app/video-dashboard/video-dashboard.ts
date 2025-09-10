@@ -5,6 +5,7 @@ import { VideoPlayer } from '../video-player/video-player';
 import { Video } from '../video-types';
 import { VideoDataHandler } from '../video-data-handler';
 import { take } from 'rxjs';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'tp-video-dashboard',
