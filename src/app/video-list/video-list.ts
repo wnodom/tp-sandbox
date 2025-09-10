@@ -1,10 +1,12 @@
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 import { Video } from '../video-types';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'tp-video-list',
   templateUrl: './video-list.html',
   styleUrl: './video-list.scss',
+  imports: [RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class VideoList {
