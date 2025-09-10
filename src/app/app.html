@@ -2,7 +2,7 @@
   <h1>{{ title() }}</h1>
 </header>
 
-<tp-video-list (currentVideo)="currentVideo.set($event)" />
+<tp-video-list [videos]="videos()" (selectVideo)="updateCurrentVideo($event)" />
 
 <tp-video-player [video]="currentVideo()" />
 
