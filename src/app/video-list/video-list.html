@@ -4,7 +4,7 @@
 https://jeanmeche.github.io/angular-for-tracking/?tracking=id&dom=stateless&change=shuffle
 -->
 @for (v of videos(); track uniqueTracker(v)) {
-<button (click)="updateCurrentVideo(v)">
+<button (click)="updateSelectedVideo(v)">
   <img [src]="`http://img.youtube.com/vi/${v.id}/0.jpg`" />
   {{ v.title }}
 </button>

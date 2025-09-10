@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, computed, effect, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { VideoList } from './video-list/video-list';
 import { VideoPlayer } from './video-player/video-player';
@@ -13,13 +13,20 @@ import { toSignal } from '@angular/core/rxjs-interop';
   styleUrl: './app.scss',
 })
 export class App {
-  private readonly vdh = inject(VideoDataHandler);
+  protected readonly vdh = inject(VideoDataHandler);
 
   protected readonly title = signal('sandbox');
 
   protected readonly videos = toSignal(this.vdh.loadVideos());
 
-  protected readonly currentVideo = toSignal(this.vdh.currentVideo$);
+  protected readonly myVideo = computed(() => {
+    console.log('Computing myVideo:', this.vdh.currentVideo());
+    return this.vdh.currentVideo();
+  });
+
+  private myEffect = effect(() => {
+    console.log('WITHIN EFFECT:', this.vdh.currentVideo());
+  });
 
   updateCurrentVideo(v: Video) {
     this.vdh.updateCurrentVideo(v);
