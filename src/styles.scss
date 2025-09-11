@@ -4,7 +4,10 @@ html {
   font-family: sans-serif;
 }
 
-app-root, tp-video-list, tp-video-player, tp-stat-filters {
+app-root,
+tp-video-list,
+tp-video-player,
+tp-stat-filters {
   outline: 3px solid green;
   padding: 1rem;
 }

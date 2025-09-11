@@ -8,9 +8,8 @@ describe('StatFilters', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [StatFilters]
-    })
-    .compileComponents();
+      imports: [StatFilters],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(StatFilters);
     component = fixture.componentInstance;

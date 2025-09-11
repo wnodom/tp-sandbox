@@ -8,9 +8,8 @@ describe('VideoList', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [VideoList]
-    })
-    .compileComponents();
+      imports: [VideoList],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(VideoList);
     component = fixture.componentInstance;

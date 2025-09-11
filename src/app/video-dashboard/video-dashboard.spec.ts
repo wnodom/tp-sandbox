@@ -8,9 +8,8 @@ describe('VideoDashboard', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [VideoDashboard]
-    })
-    .compileComponents();
+      imports: [VideoDashboard],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(VideoDashboard);
     component = fixture.componentInstance;
