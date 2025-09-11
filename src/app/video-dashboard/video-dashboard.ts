@@ -5,6 +5,7 @@ import { VideoPlayer } from '../video-player/video-player';
 import { Video } from '../video-types';
 import { VideoDataHandler } from '../video-data-handler';
 import { take } from 'rxjs';
+import { VideoStore } from '../video.state';
 
 @Component({
   selector: 'tp-video-dashboard',
@@ -16,9 +17,13 @@ import { take } from 'rxjs';
 export default class VideoDashboard {
   readonly id = input<string | undefined>();
 
+  private readonly videoStore = inject(VideoStore);
+
   protected readonly vdh = inject(VideoDataHandler);
 
-  protected readonly videos = this.vdh.currentVideoSubset;
+  // was: protected readonly videos = this.vdh.currentVideoSubset;
+
+  protected readonly videos = this.videoStore.currentVideos;
 
   protected readonly currentVideo = signal<Video | undefined>(undefined);
 

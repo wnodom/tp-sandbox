@@ -4,7 +4,7 @@
 https://jeanmeche.github.io/angular-for-tracking/?tracking=id&dom=stateless&change=shuffle
 -->
 @for (v of videos(); track uniqueTracker(v)) {
-  <a [routerLink]="v.id">
+  <a [routerLink]="['/dashboard', v.id]">
     <img [src]="`http://img.youtube.com/vi/${v.id}/0.jpg`" [alt]="v.title" />
     {{ v.title }}
   </a>
