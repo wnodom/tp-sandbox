@@ -10,6 +10,12 @@ export interface VideoState {
   currentVideos: Video[];
 }
 
+const placeDataInVideoStateObject = (videos: Video[]) => {
+  return {
+    currentVideos: videos,
+  };
+};
+
 export const VideoStore = signalStore(
   { providedIn: 'root', protectedState: false },
   withState<VideoState>({ currentVideos: [] }),
@@ -22,9 +28,7 @@ export const VideoStore = signalStore(
         pipe(
           switchMap(() => {
             return loader.loadVideos().pipe(
-              map((videos) => ({
-                currentVideos: videos,
-              })),
+              map(placeDataInVideoStateObject),
               catchError((error) => {
                 console.error('Could not load videos', error);
                 window.alert('Could not load videos');
